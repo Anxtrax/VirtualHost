@@ -146,7 +146,7 @@ $app->get('/api/carreras/{clave_carrera}', function(Request $request, Response $
         $db = $db->connect();
         $stmt = $db->query($sql);
         $carrera = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $db = null;
+        //$db = null;
         echo json_encode($carrera);
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
